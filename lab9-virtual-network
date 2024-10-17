@@ -1,0 +1,27 @@
+<network>
+  <name>lab9</name>
+  <uuid>0753b876-fe94-4ee0-9e81-22ce7df224ef</uuid>
+  <forward mode='nat'/>
+  <bridge name='virbr6' stp='on' delay='0'/>
+  <mac address='52:54:00:9b:ba:69'/>
+  <domain name='lab9.local' localOnly='yes'/>
+  <dns>
+    <host ip='10.10.9.1'>
+      <hostname>gateway</hostname>
+    </host>
+  </dns>
+  <ip address='10.10.9.1' netmask='255.255.255.0' localPtr='yes'>
+    <dhcp>
+      <range start='10.10.9.50' end='10.10.9.200'/>
+      <host mac='52:54:00:1f:69:20' name='mgr' ip='10.10.9.5'/>
+      <host mac='52:54:00:88:12:70' name='srv0' ip='10.10.9.10'/>
+      <host mac='52:54:00:3e:dc:b0' name='srv1' ip='10.10.9.11'/>
+      <host mac='52:54:00:63:89:d0' name='srv2' ip='10.10.9.12'/>
+      <host mac='52:54:00:1c:4e:50' name='srv3' ip='10.10.9.13'/>
+      <host mac='52:54:00:0e:d9:40' name='srv4' ip='10.10.9.14'/>
+      <host mac='52:54:00:f7:8b:f0' name='srv5' ip='10.10.9.15'/>
+      <host mac='52:54:00:0f:35:30' name='srv6' ip='10.10.9.16'/>
+      <bootp file='/pxelinux.0' server='10.10.9.5'/>
+    </dhcp>
+  </ip>
+</network>
